@@ -82,7 +82,7 @@ def fetch_index_data(ticker_symbol):
             df.index = df.index.tz_localize("UTC").tz_convert(IST)
         else:
             df.index = df.index.tz_convert(IST)
-            
+
         last_date = df.index[-1].date()
         df_today = df[df.index.date == last_date].copy()
         return df_today
